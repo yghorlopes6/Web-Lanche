@@ -16,124 +16,19 @@
       </div>
       <div class="col-md-6" v-if="etapa == 1">
         <div class="row mt-2">
-          <div class="col">
-            <div class="card">
-              <div class="card-header">PÃO</div>
-              <div class="card-body">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="gergelim"
-                    v-model="inputTipoPao"
-                  />
-                  <label class="form-check-label">Gergelim</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="australiano"
-                    v-model="inputTipoPao"
-                  />
-                  <label class="form-check-label">Australiano</label>
-                </div>
-              </div>
-            </div>
-          </div>
+          <paoComp />
         </div>
 
         <div class="row mt-2">
-          <div class="col">
-            <div class="card">
-              <div class="card-header">SALADAS</div>
-              <div class="card-body">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="alface"
-                    v-model="inputSalada"
-                  />
-                  <label class="form-check-label">Alface</label>
-                </div>
-              </div>
-            </div>
-          </div>
+          <SaladaComp />
         </div>
 
         <div class="row mt-2">
-          <div class="col">
-            <div class="card">
-              <div class="card-header">MOLHOS</div>
-              <div class="card-body">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="ketchup"
-                    v-model="inputMolho"
-                  />
-                  <label class="form-check-label">Ketchup</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="mostarda"
-                    v-model="inputMolho"
-                  />
-                  <label class="form-check-label">Mostarda</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="maionese"
-                    v-model="inputMolho"
-                  />
-                  <label class="form-check-label">Maionese</label>
-                </div>
-              </div>
-            </div>
-          </div>
+          <MolhoComp />
         </div>
 
         <div class="row mt-2">
-          <div class="col">
-            <div class="card">
-              <div class="card-header">HAMBÚRGUER</div>
-              <div class="card-body">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="bovino"
-                    v-model="inputHamburguer"
-                  />
-                  <label class="form-check-label">Bovino</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="frango"
-                    v-model="inputHamburguer"
-                  />
-                  <label class="form-check-label">Frango</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="soja"
-                    v-model="inputHamburguer"
-                  />
-                  <label class="form-check-label">Soja</label>
-                </div>
-              </div>
-            </div>
-          </div>
+          <HamburguerComp />
         </div>
         <div class="row mt-2">
           <div class="col d-flex justify-content-end">
@@ -210,6 +105,10 @@
 </template>
 
 <script>
+import paoComp from "./PaoComponent.vue";
+import SaladaComp from "./SaladaComponent.vue";
+import MolhoComp from "./MolhoComponent.vue";
+import HamburguerComp from "./HamburguerComponent.vue";
 export default {
   data() {
     return {
@@ -308,6 +207,12 @@ export default {
         clearTimeout(this.novoPedidoAssincrono);
       }
     },
+  },
+  components: {
+    paoComp,
+    SaladaComp,
+    MolhoComp,
+    HamburguerComp,
   },
 };
 </script>
